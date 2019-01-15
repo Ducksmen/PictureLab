@@ -801,14 +801,11 @@ public class PictureExplorer implements MouseMotionListener, ActionListener, Mou
   public static void main( String args[])
   {
     Picture pix = new Picture("water.jpg");
-    pix.explore();
     pix.makeFishEasierToSee();
     pix.explore();
-    pix.negate();
+    pix.mirrorVertical();
     pix.explore();
-    pix.keepOnlyBlue();
-    pix.explore();
-    pix.greyscale();
+    pix.mirrorHorizontal();
     pix.explore();
   }
   
