@@ -324,7 +324,7 @@ public class Picture extends SimplePicture
 
     public void mirrorGull()
     {
-        int mirrorPoint = 360;
+        int mirrorPoint = 345;
         Pixel leftPixel = null;
         Pixel rightPixel = null;
         int count = 0;
