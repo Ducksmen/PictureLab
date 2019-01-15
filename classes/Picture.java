@@ -322,6 +322,33 @@ public class Picture extends SimplePicture
       System.out.println(count);
   }
 
+    public void mirrorGull()
+    {
+        int mirrorPoint = 360;
+        Pixel leftPixel = null;
+        Pixel rightPixel = null;
+        int count = 0;
+        Pixel[][] pixels = this.getPixels2D();
+
+        // loop through the rows
+        for (int row = 229; row < mirrorPoint; row++)
+        {
+            // loop from 13 to just before the mirror point
+            for (int col = 233; col < 350; col++)
+            {
+
+                leftPixel = pixels[row][col];
+                rightPixel = pixels[row]
+                        [mirrorPoint - col + mirrorPoint];
+                rightPixel.setColor(leftPixel.getColor());
+                count++;
+            }
+            count++;
+        }
+        System.out.println(count);
+    }
+
+
 
 
   /** copy from the passed fromPic to the
