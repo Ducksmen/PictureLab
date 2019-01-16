@@ -42,14 +42,22 @@ public class PictureTester
     canvas.createCollage();
     canvas.explore();
   }
+
+  public static void  testNegate()
+  {
+    Picture picture = new Picture("swan.jpg");
+    picture.negate();
+    picture.explore();
+  }
   
   /** Method to test edgeDetection */
   public static void testEdgeDetection()
   {
     Picture swan = new Picture("swan.jpg");
-    swan.edgeDetection(10);
+    swan.edgeDetection(5);
     swan.explore();
   }
+
 
   public static void testCollage2()
   {
@@ -80,7 +88,7 @@ public class PictureTester
     //testMirrorDiagonal();
     //testCollage();
     //testCopy();
-    //testEdgeDetection();
+    testEdgeDetection();
     //testEdgeDetection2();
     //testChromakey();
     //testEncodeAndDecode();
@@ -88,6 +96,6 @@ public class PictureTester
     //testSetRedToHalfValueInTopHalf();
     //testClearBlueOverValue(200);
     //testGetAverageForColumn(0);
-    testCollage2();
+    //testCollage2();
   }
 }
