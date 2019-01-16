@@ -53,8 +53,9 @@ public class PictureTester
 
   public static void testCollage2()
   {
-    Picture flower1 = new Picture("flower1.jpg");
-    flower1.copy2(flower1,50,0,70,300);
+    Picture flower1 = new Picture("640x480.jpg");
+    Picture flower2 = new Picture("flower1.jpg");
+    flower1.copy2(flower2,0,0,100,100);
     flower1.explore();
   }
   
