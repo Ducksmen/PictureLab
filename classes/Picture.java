@@ -348,9 +348,6 @@ public class Picture extends SimplePicture
         System.out.println(count);
     }
 
-
-
-
   /** copy from the passed fromPic to the
     * specified startRow and startCol in the
     * current picture
@@ -358,8 +355,7 @@ public class Picture extends SimplePicture
     * @param startRow the start row to copy to
     * @param startCol the start col to copy to
     */
-  public void copy(Picture fromPic,
-                 int startRow, int startCol)
+  public void copy(Picture fromPic, int startRow, int startCol)
   {
     Pixel fromPixel = null;
     Pixel toPixel = null;
@@ -382,6 +378,36 @@ public class Picture extends SimplePicture
     }
   }
 
+  public void copy2(Picture fromPic, int startRow, int startCol, int endRow, int endCol)
+  {
+      Pixel fromPixel = null;
+      Pixel toPixel = null;
+      Pixel[][] toPixels = this.getPixels2D();
+      Pixel[][] fromPixels = fromPic.getPixels2D(); //L9 ?XD ?XD ?XD ?XD
+      for (int fromRow = 0, toRow = startRow;
+           fromRow < fromPixels.length &&
+                   toRow < endRow;
+           fromRow++, toRow++)
+      {
+          for (int fromCol = 0, toCol = startCol;
+               fromCol < fromPixels[0].length &&
+                       toCol < endCol;
+               fromCol++, toCol++)
+          {
+              fromPixel = fromPixels[fromRow][fromCol];
+              toPixel = toPixels[toRow][toCol];
+              toPixel.setColor(fromPixel.getColor());
+          }
+      }
+  }
+
+  public void myCollage() {
+
+      Picture flower1 = new Picture("flower1.jpg");
+      flower1.copy2(flower1,10,0,20,100);
+      this.write("collage2.jpg");
+  }
+
   /** Method to create a collage of several pictures */
   public void createCollage()
   {
@@ -398,7 +424,6 @@ public class Picture extends SimplePicture
     this.mirrorVertical();
     this.write("collage.jpg");
   }
-
 
   /** Method to show large changes in color
     * @param edgeDist the distance for finding edges
@@ -433,9 +458,8 @@ public class Picture extends SimplePicture
   public static void main(String[] args)
   {
     Picture beach = new Picture("snowman.jpg");
-    beach.explore();
-    beach.zeroBlue();
+    beach.myCollage();
     beach.explore();
   }
 
-} // this } is the end of class Picture, put all new methods before this
+} // this } is the end of class Picture, put all new methods before this // this } is the end of class Picture, put all new methods before this

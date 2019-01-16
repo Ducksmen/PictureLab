@@ -50,6 +50,13 @@ public class PictureTester
     swan.edgeDetection(10);
     swan.explore();
   }
+
+  public static void testCollage2()
+  {
+    Picture flower1 = new Picture("flower1.jpg");
+    flower1.copy2(flower1,50,0,70,300);
+    flower1.explore();
+  }
   
   /** Main method for testing.  Every class can have a main
     * method in Java */
@@ -58,7 +65,7 @@ public class PictureTester
     // uncomment a call here to run a test
     // and comment out the ones you don't want
     // to run
-    testZeroBlue();
+    //testZeroBlue();
     //testKeepOnlyBlue();
     //testKeepOnlyRed();
     //testKeepOnlyGreen();
@@ -80,5 +87,6 @@ public class PictureTester
     //testSetRedToHalfValueInTopHalf();
     //testClearBlueOverValue(200);
     //testGetAverageForColumn(0);
+    testCollage2();
   }
 }
